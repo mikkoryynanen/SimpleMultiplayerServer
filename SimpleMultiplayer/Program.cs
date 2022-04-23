@@ -5,13 +5,19 @@ using System.Net.Sockets;
 using System.Text;
 using Newtonsoft.Json;
 using Shared;
+using SimpleMultiplayer.Handlers;
 
 namespace SimpleMultiplayer
 {
     class Server
     {
+        private static MessageProcessor messageProcessor = null;
+        
         static void Main(string[] args)
         {
+            messageProcessor = new();
+            messageProcessor.AddHandler(new TestMessageHandler());
+            
             Console.WriteLine("Starting server...");
             TcpListener listener = new TcpListener(IPAddress.Any, 13000);
             listener.Start();
@@ -59,10 +65,8 @@ namespace SimpleMultiplayer
                     // Reading of the data from the byte array
                     // Convert it correctly
 
-                    var test = Shared.Serializer.ByteArrayToObject<Shared.Packets.TestPackage>(receivedData);
-                    
-                    
-                    Console.WriteLine("Received JSON ", test);
+                    var msg = Shared.Serializer.ByteArrayToObject<Shared.Messages.IMessage>(receivedData);
+                    messageProcessor.ProcessMessage(msg);
                 }
             }
             
