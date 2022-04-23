@@ -3,21 +3,21 @@ using Shared;
 
 namespace SimpleMultiplayer;
 
-public class MessageProcessor
+public class PacketProcessor
 {
-    private readonly Dictionary<Type, MessageHandler.IMessageHandler> _handlers = new();
+    private readonly Dictionary<Type, PacketHandler.IPacketHandler> _handlers = new();
 
-    public MessageProcessor()
+    public PacketProcessor()
     {
         // var types = Assembly.GetExecutingAssembly().GetTypes();
         // foreach (var type in types)
         // {
         //     if(type.Namespace == "")
-        //         AddHandler((MessageHandler.IMessageHandler)type);
+        //         AddHandler((PacketHandler.IPacketHandler)type);
         // }
     }
 
-    public void AddHandler(MessageHandler.IMessageHandler handler)
+    public void AddHandler(PacketHandler.IPacketHandler handler)
     {
         var concreteType = handler.ConcreteType;
         if (_handlers.ContainsKey((concreteType)))
@@ -31,11 +31,11 @@ public class MessageProcessor
         _handlers[concreteType] = handler;
     }
 
-    public void ProcessMessage(Messages.IMessage msg)
+    public void ProcessMessage(Packets.IPacket msg)
     {
         if (_handlers.TryGetValue(msg.GetType(), out var handler))
         {
-            handler.HandleMessage(msg);
+            handler.HandlePacket(msg);
         }
         else
         {

@@ -6,27 +6,27 @@ using Shared;
 
 namespace SimpleMultiplayer;
 
-public class MessageHandler
+public class PacketHandler
 {
-    public interface IMessageHandler
+    public interface IPacketHandler
     {
         Type ConcreteType { get; }
-        bool HandleMessage(Messages.IMessage msg);
+        bool HandlePacket(Packets.IPacket packet);
     }
     
     
 }
 
-public abstract class MessageHandlerBase<T> : MessageHandler.IMessageHandler where T : Messages.IMessage
+public abstract class PacketHandlerBase<T> : PacketHandler.IPacketHandler where T : Packets.IPacket
 {
     public Type ConcreteType => typeof(T);
 
-    public bool HandleMessage(Messages.IMessage msg)
+    public bool HandlePacket(Packets.IPacket packet)
     {
-        if (!(msg is T concreteMsg)) 
+        if (!(packet is T concretePacket)) 
             return false;
             
-        Handle(concreteMsg);
+        Handle(concretePacket);
         return true;
     }
 

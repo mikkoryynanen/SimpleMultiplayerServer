@@ -13,7 +13,7 @@ namespace SimpleMultiplayer
 
                 using (NetworkStream stream = client.GetStream())
                 {
-                    Messages.TestMessage test = new()
+                    Packets.TestPacket test = new()
                     {
                         Message = "Hello from the client"
                     };
