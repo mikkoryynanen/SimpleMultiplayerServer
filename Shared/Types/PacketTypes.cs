@@ -11,4 +11,11 @@ public class Packets
     {
         public string Message { get; set; }
     }
+    
+    [Serializable]
+    public struct Position : IPacket
+    {
+        public float X { get; set; }
+        public float Y { get; set; }
+    }
 }

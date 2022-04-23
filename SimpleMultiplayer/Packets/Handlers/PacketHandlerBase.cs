@@ -30,5 +30,5 @@ public abstract class PacketHandlerBase<T> : PacketHandler.IPacketHandler where 
         return true;
     }
 
-    protected abstract void Handle(T msg);
+    protected abstract void Handle(T packet);
 }

@@ -16,7 +16,6 @@ class Server
             _packetProcessor = new();
             //TODO: Can we figure out a better way of adding new handlers?
             _packetProcessor.AddHandler(new TestPacketHandler());
-            // _packetProcessor.AddHandler(new SecondPacketHandler());
             
             Console.WriteLine("Starting server...");
             TcpListener listener = new TcpListener(IPAddress.Any, 13000);
