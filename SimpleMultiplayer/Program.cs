@@ -17,6 +17,7 @@ namespace SimpleMultiplayer
         {
             messageProcessor = new();
             messageProcessor.AddHandler(new TestMessageHandler());
+            // messageProcessor.AddHandler(new SecondMessageHandler());
             
             Console.WriteLine("Starting server...");
             TcpListener listener = new TcpListener(IPAddress.Any, 13000);

@@ -1,3 +1,4 @@
+using System.Reflection;
 using Shared;
 
 namespace SimpleMultiplayer;
@@ -8,7 +9,12 @@ public class MessageProcessor
 
     public MessageProcessor()
     {
-        
+        // var types = Assembly.GetExecutingAssembly().GetTypes();
+        // foreach (var type in types)
+        // {
+        //     if(type.Namespace == "")
+        //         AddHandler((MessageHandler.IMessageHandler)type);
+        // }
     }
 
     public void AddHandler(MessageHandler.IMessageHandler handler)

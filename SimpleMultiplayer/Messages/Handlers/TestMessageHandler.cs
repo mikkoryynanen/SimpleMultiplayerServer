@@ -2,7 +2,7 @@ using Shared;
 
 namespace SimpleMultiplayer.Handlers;
 
-public class TestMessageHandler : MessageHandler.MessageHandlerBase<Messages.TestMessage>
+public class TestMessageHandler : MessageHandlerBase<Messages.TestMessage>
 {
     protected override void Handle(Messages.TestMessage msg)
     {
@@ -10,7 +10,7 @@ public class TestMessageHandler : MessageHandler.MessageHandlerBase<Messages.Tes
     }
 }
 
-public class SecondMessageHandler : MessageHandler.MessageHandlerBase<Messages.SecondMessage>
+public class SecondMessageHandler : MessageHandlerBase<Messages.SecondMessage>
 {
     protected override void Handle(Messages.SecondMessage msg)
     {
