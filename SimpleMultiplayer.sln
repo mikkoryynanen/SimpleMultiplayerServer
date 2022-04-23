@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleMultiplayer", "SimpleMultiplayer\SimpleMultiplayer.csproj", "{9A074915-1313-4B95-8144-2B96ADEFE252}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "Client\Client.csproj", "{30C152AD-D90F-4F66-95A1-6ADB4E5A0D53}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "Shared\Shared.csproj", "{A135D148-AB8B-4A1C-8DE4-A5176D4E0DAC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9A074915-1313-4B95-8144-2B96ADEFE252}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A074915-1313-4B95-8144-2B96ADEFE252}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A074915-1313-4B95-8144-2B96ADEFE252}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A074915-1313-4B95-8144-2B96ADEFE252}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30C152AD-D90F-4F66-95A1-6ADB4E5A0D53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30C152AD-D90F-4F66-95A1-6ADB4E5A0D53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30C152AD-D90F-4F66-95A1-6ADB4E5A0D53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30C152AD-D90F-4F66-95A1-6ADB4E5A0D53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A135D148-AB8B-4A1C-8DE4-A5176D4E0DAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A135D148-AB8B-4A1C-8DE4-A5176D4E0DAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A135D148-AB8B-4A1C-8DE4-A5176D4E0DAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A135D148-AB8B-4A1C-8DE4-A5176D4E0DAC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
