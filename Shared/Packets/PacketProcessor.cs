@@ -1,7 +1,8 @@
 using System.Reflection;
 using Shared;
+using SimpleMultiplayer;
 
-namespace SimpleMultiplayer;
+namespace Shared.Packats;
 
 public class PacketProcessor
 {
@@ -31,11 +32,11 @@ public class PacketProcessor
         _handlers[concreteType] = handler;
     }
 
-    public void ProcessMessage(Packets.IPacket msg)
+    public void ProcessMessage(Shared.Packets.IPacket packet)
     {
-        if (_handlers.TryGetValue(msg.GetType(), out var handler))
+        if (_handlers.TryGetValue(packet.GetType(), out var handler))
         {
-            handler.HandlePacket(msg);
+            handler.HandlePacket(packet);
         }
         else
         {

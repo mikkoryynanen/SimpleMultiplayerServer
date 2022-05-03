@@ -11,17 +11,17 @@ public class PacketHandler
     public interface IPacketHandler
     {
         Type ConcreteType { get; }
-        bool HandlePacket(Packets.IPacket packet);
+        bool HandlePacket(Shared.Packets.IPacket packet);
     }
     
     
 }
 
-public abstract class PacketHandlerBase<T> : PacketHandler.IPacketHandler where T : Packets.IPacket
+public abstract class PacketHandlerBase<T> : PacketHandler.IPacketHandler
 {
     public Type ConcreteType => typeof(T);
 
-    public bool HandlePacket(Packets.IPacket packet)
+    public bool HandlePacket(Shared.Packets.IPacket packet)
     {
         if (!(packet is T concretePacket)) 
             return false;

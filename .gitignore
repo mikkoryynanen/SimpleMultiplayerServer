@@ -3,3 +3,9 @@ obj/
 /packages/
 riderModule.iml
 /_ReSharper.Caches/
+tags
+SimpleMultiplayer/.DS_Store
+Shared/Packets/.DS_Store
+Client/Packets/Handlers/.DS_Store
+Client/Packets/.DS_Store
+tags

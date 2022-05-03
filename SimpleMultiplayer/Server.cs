@@ -1,6 +1,8 @@
 using System.Net;
 using System.Net.Sockets;
-using SimpleMultiplayer.Handlers;
+using Shared.Packats;
+using SimpleMultiplayer.Clients;
+using SimpleMultiplayer.Packets.Handlers;
 
 namespace SimpleMultiplayer;
 
@@ -15,7 +17,7 @@ class Server
             // TODO: Move these to somewhere else
             _packetProcessor = new();
             //TODO: Can we figure out a better way of adding new handlers?
-            _packetProcessor.AddHandler(new TestPacketHandler());
+            _packetProcessor.AddHandler(new PositionPacketHandler());
             
             Console.WriteLine("Starting server...");
             TcpListener listener = new TcpListener(IPAddress.Any, 13000);
@@ -46,6 +48,13 @@ class Server
             NetworkStream stream = client.GetStream();
             client.SendBufferSize = 4096;
             client.ReceiveBufferSize = 4096;
+            
+            ClientHandler.AddClient(new ClientHandler.Client
+            {
+                Id = new Guid("c83b069a-be1b-4c58-815d-b90bef964307"),
+                Position = new(),
+                Username = "Test user"
+            });
 
             while (true)
             {
@@ -68,6 +77,19 @@ class Server
 
                     var msg = Shared.Serializer.ByteArrayToObject<Shared.Packets.IPacket>(receivedData);
                     _packetProcessor.ProcessMessage(msg);
+                    
+                    Thread.Sleep(500);
+                    
+                    Shared.Packets.Position position = new()
+                    {
+                        X = 0,
+                        Y = 0,
+                        ClientId = new Guid("c83b069a-be1b-4c58-815d-b90bef964307")
+                    };
+                    byte[] data = Shared.Serializer.ObjectToByteArray(position);
+
+                    // Send the message to the connected TcpServer.
+                    stream.Write(data, 0, data.Length);
                 }
             }
             

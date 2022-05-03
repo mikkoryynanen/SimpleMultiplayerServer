@@ -15,6 +15,7 @@ public class Packets
     [Serializable]
     public struct Position : IPacket
     {
+        public Guid ClientId { get; set; }
         public float X { get; set; }
         public float Y { get; set; }
     }

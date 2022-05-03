@@ -1,0 +1,52 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+AddClient	SimpleMultiplayer/Clients/ClientHandler.cs	/^    public static void AddClient(Client client)$/;"	m	class:ClientHandler
+AddHandler	SimpleMultiplayer/Packets/PacketProcessor.cs	/^    public void AddHandler(PacketHandler.IPacketHandler handler)$/;"	m	class:PacketProcessor
+BrodcastAll	SimpleMultiplayer/Clients/ClientHandler.cs	/^    public static void BrodcastAll()$/;"	m	class:ClientHandler
+ByteArrayToObject	Shared/Serializer.cs	/^    public static T ByteArrayToObject<T>(byte[] arrBytes)$/;"	m	class:Serializer
+Client	Client/Program.cs	/^    class Client$/;"	c	namespace:SimpleMultiplayer
+Client	SimpleMultiplayer/Clients/ClientHandler.cs	/^    public class Client$/;"	c	class:ClientHandler
+ClientHandler	SimpleMultiplayer/Clients/ClientHandler.cs	/^public class ClientHandler$/;"	c
+ClientId	Shared/Types/PacketTypes.cs	/^        public Guid ClientId { get; set; }$/;"	p	struct:Packets.Position
+ConcreteType	SimpleMultiplayer/Packets/Handlers/PacketHandlerBase.cs	/^        Type ConcreteType { get; }$/;"	p	interface:PacketHandler.IPacketHandler
+ConcreteType	SimpleMultiplayer/Packets/Handlers/PacketHandlerBase.cs	/^    public Type ConcreteType => typeof(T);$/;"	f	class:PacketHandlerBase
+GetClient	SimpleMultiplayer/Clients/ClientHandler.cs	/^    public static Client? GetClient(Guid clientId)$/;"	m	class:ClientHandler
+Handle	SimpleMultiplayer/Packets/Handlers/PacketHandlerBase.cs	/^    protected abstract void Handle(T packet);$/;"	m	class:PacketHandlerBase
+Handle	SimpleMultiplayer/Packets/Handlers/PositionPacketHandler.cs	/^    protected override void Handle(Shared.Packets.Position packet)$/;"	m	class:PositionPacketHandler
+HandlePacket	SimpleMultiplayer/Packets/Handlers/PacketHandlerBase.cs	/^        bool HandlePacket(Shared.Packets.IPacket packet);$/;"	m	interface:PacketHandler.IPacketHandler
+HandlePacket	SimpleMultiplayer/Packets/Handlers/PacketHandlerBase.cs	/^    public bool HandlePacket(Shared.Packets.IPacket packet)$/;"	m	class:PacketHandlerBase
+IPacket	Shared/Types/PacketTypes.cs	/^    public interface IPacket$/;"	i	class:Packets
+IPacketHandler	SimpleMultiplayer/Packets/Handlers/PacketHandlerBase.cs	/^    public interface IPacketHandler$/;"	i	class:PacketHandler
+Id	SimpleMultiplayer/Clients/ClientHandler.cs	/^        public Guid Id { get; set; } = new Guid("c83b069a-be1b-4c58-815d-b90bef964307");$/;"	p	class:ClientHandler.Client
+IsRunning	SimpleMultiplayer/Server.cs	/^    private static bool IsRunning { get; set; } = false;$/;"	p	class:Server
+Main	Client/Program.cs	/^        static void Main(string[] args)$/;"	m	class:SimpleMultiplayer.Client	file:
+Main	SimpleMultiplayer/Program.cs	/^        static void Main(string[] args)$/;"	m	class:SimpleMultiplayer.Multiplayer	file:
+Message	Shared/Types/PacketTypes.cs	/^        public string Message { get; set; }$/;"	p	struct:Packets.TestPacket
+Multiplayer	SimpleMultiplayer/Program.cs	/^    class Multiplayer$/;"	c	namespace:SimpleMultiplayer
+ObjectToByteArray	Shared/Serializer.cs	/^    public static byte[] ObjectToByteArray(Object obj)$/;"	m	class:Serializer
+PacketHandler	SimpleMultiplayer/Packets/Handlers/PacketHandlerBase.cs	/^public class PacketHandler$/;"	c
+PacketHandlerBase	SimpleMultiplayer/Packets/Handlers/PacketHandlerBase.cs	/^public abstract class PacketHandlerBase<T> : PacketHandler.IPacketHandler$/;"	c
+PacketProcessor	SimpleMultiplayer/Packets/PacketProcessor.cs	/^    public PacketProcessor()$/;"	m	class:PacketProcessor
+PacketProcessor	SimpleMultiplayer/Packets/PacketProcessor.cs	/^public class PacketProcessor$/;"	c
+Packets	Shared/Types/PacketTypes.cs	/^public class Packets$/;"	c
+Position	Shared/Types/PacketTypes.cs	/^    public struct Position : IPacket$/;"	s	class:Packets
+Position	SimpleMultiplayer/Clients/ClientHandler.cs	/^        public Shared.Packets.Position Position { get; set; } \/\/ TODO: Use domain class for position$/;"	p	class:ClientHandler.Client
+PositionPacketHandler	SimpleMultiplayer/Packets/Handlers/PositionPacketHandler.cs	/^public class PositionPacketHandler : PacketHandlerBase<Shared.Packets.Position>$/;"	c
+ProcessMessage	SimpleMultiplayer/Packets/PacketProcessor.cs	/^    public void ProcessMessage(Shared.Packets.IPacket packet)$/;"	m	class:PacketProcessor
+Serializer	Shared/Serializer.cs	/^public class Serializer$/;"	c
+Server	SimpleMultiplayer/Server.cs	/^class Server$/;"	c
+SetPosition	SimpleMultiplayer/Clients/ClientHandler.cs	/^        public void SetPosition(float x, float y)$/;"	m	class:ClientHandler.Client
+SimpleMultiplayer	Client/Program.cs	/^namespace SimpleMultiplayer$/;"	n
+SimpleMultiplayer	SimpleMultiplayer/Program.cs	/^namespace SimpleMultiplayer$/;"	n
+Start	SimpleMultiplayer/Server.cs	/^        public static void Start()$/;"	m	class:Server
+TestPacket	Shared/Types/PacketTypes.cs	/^    public struct TestPacket : IPacket$/;"	s	class:Packets
+Username	SimpleMultiplayer/Clients/ClientHandler.cs	/^        public string Username { get; set; }$/;"	p	class:ClientHandler.Client
+X	Shared/Types/PacketTypes.cs	/^        public float X { get; set; }$/;"	p	struct:Packets.Position
+Y	Shared/Types/PacketTypes.cs	/^        public float Y { get; set; }$/;"	p	struct:Packets.Position
+_clients	SimpleMultiplayer/Clients/ClientHandler.cs	/^    private static Dictionary<Guid, Client> _clients = new();$/;"	f	class:ClientHandler	file:
+_handlers	SimpleMultiplayer/Packets/PacketProcessor.cs	/^    private readonly Dictionary<Type, PacketHandler.IPacketHandler> _handlers = new();$/;"	f	class:PacketProcessor	file:
+_packetProcessor	SimpleMultiplayer/Server.cs	/^    private static PacketProcessor _packetProcessor = null;$/;"	f	class:Server	file:
